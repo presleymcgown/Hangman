@@ -1,6 +1,7 @@
 import acm.graphics.GLabel;
 import acm.program.GraphicsProgram;
 import acm.util.RandomGenerator;
+import svu.csc213.Dialog;
 
 import java.awt.*;
 
@@ -15,6 +16,7 @@ public class Game extends GraphicsProgram {
     private letterLines lLine;
 
     private double lettersOfWord = 5;
+    private String gameWord =
 
     private String[] alphabet = {"A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"};
 
@@ -30,7 +32,7 @@ public class Game extends GraphicsProgram {
 
                 lettersOnScreen = new GLabel(alphabet[alphaNum] + "");
 
-                lettersOnScreen.setFont("Calibri-22");
+                lettersOnScreen.setFont("Centaur-22");
 
                 add(lettersOnScreen, 190 + (col * 30), 400 + (row * 30));
 
@@ -64,7 +66,14 @@ public class Game extends GraphicsProgram {
         add(RLeg);
 
 
+        waitForClick();
+        gameLoop();
 
+
+    }
+
+    private void gameLoop(){
+        Dialog.getString("please type in letter guess.");
     }
 
     public static void main(String[] args) {
