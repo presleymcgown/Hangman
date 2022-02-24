@@ -12,6 +12,9 @@ public class Game extends GraphicsProgram {
     private Arm RArm;
     private Leg LLeg;
     private Leg RLeg;
+    private letterLines lLine;
+
+    private double lettersOfWord = 5;
 
     private String[] alphabet = {"A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"};
 
@@ -27,11 +30,19 @@ public class Game extends GraphicsProgram {
 
                 lettersOnScreen = new GLabel(alphabet[alphaNum] + "");
 
-                add(lettersOnScreen, 280 + (col * 15), 400 + (row * 15));
+                lettersOnScreen.setFont("Calibri-22");
+
+                add(lettersOnScreen, 190 + (col * 30), 400 + (row * 30));
 
                 alphaNum += 1;
 
             }
+        }
+
+        for (int i = 0; i < lettersOfWord; i++) {
+
+            lLine = new letterLines( (375 / (lettersOfWord) + 150)+ i * (50 + 10), 300, 50, 2);
+            add(lLine);
         }
 
         head = new Head(350, 50, 50, this.getGCanvas(), new Color(97, 212, 149, 55));
