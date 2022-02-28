@@ -16,11 +16,21 @@ public class Game extends GraphicsProgram {
     private letterLines lLine;
 
     private double lettersOfWord = 5;
-    private String gameWord =
+    private String gameWord;
+    private GLabel lettersOnScreen;
+    private GLabel wordLetters;
+    private String currentChar;
+    private int rightPoints;
+    private int wrongPoints;
 
     private String[] alphabet = {"A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"};
+    public String[] wordBank = {"hello", "earth", "jazzy", "fizzy", "icing", "apple", "award",
+                                "tides", "actor", "baked", "beefy", "carol", "cater", "cello",
+                                "daily", "death", "dealt", "euros", "evict", "event", "feast",
+                                "fever", "grime", "gifts", "swift", "album", "karma", "style",
+                                "blank", "tours", "loves", "crush", "banks", "vroom", "clean"};
 
-    private GLabel lettersOnScreen;
+
 
     @Override
     public void init(){
@@ -66,6 +76,9 @@ public class Game extends GraphicsProgram {
         add(RLeg);
 
 
+        gameWord = wordBank[RandomGenerator.getInstance().nextInt(1, 35)];
+
+
         waitForClick();
         gameLoop();
 
@@ -73,7 +86,53 @@ public class Game extends GraphicsProgram {
     }
 
     private void gameLoop(){
-        Dialog.getString("please type in letter guess.");
+        currentChar = Dialog.getString("please type in letter guess.");
+
+        if (gameWord.contains(currentChar)){
+            wordLetters = new GLabel(currentChar);
+            add(wordLetters, 100, 100);
+            rightPoints += 1;
+            gameLoop();
+        }
+        if (gameWord.contains(currentChar)){
+            wordLetters = new GLabel(currentChar);
+            add(wordLetters, 100, 100);
+            rightPoints += 1;
+            gameLoop();
+        }else{
+            wrongPoints += 1;
+            if(wrongPoints == 1){
+                head.setColor(new Color(0, 0, 0, 210));
+                gameLoop();
+            }else if(wrongPoints == 2){
+                body.setColor(new Color(0, 0, 0, 210));
+                gameLoop();
+            }else if(wrongPoints == 3){
+                LArm.setColor(new Color(0, 0, 0, 210));
+                gameLoop();
+            }else if(wrongPoints == 4){
+                RArm.setColor(new Color(0, 0, 0, 210));
+                gameLoop();
+            }else if(wrongPoints == 5){
+                LLeg.setColor(new Color(0, 0, 0, 231));
+                gameLoop();
+            }else if(wrongPoints == 6){
+                RLeg.setColor(new Color(0, 0, 0, 210));
+                pause(50);
+                Dialog.showMessage("you lost! try again with a new word.");
+                resetLoop();
+            }
+        }
+
+
+    }
+
+    private void resetLoop(){
+        removeAll();
+        currentChar = "";
+        rightPoints = 0;
+        wrongPoints = 0;
+        init();
     }
 
     public static void main(String[] args) {
