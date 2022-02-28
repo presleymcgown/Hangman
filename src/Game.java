@@ -88,12 +88,11 @@ public class Game extends GraphicsProgram {
     private void gameLoop(){
         currentChar = Dialog.getString("please type in letter guess.");
 
-        if (gameWord.contains(currentChar)){
-            wordLetters = new GLabel(currentChar);
-            add(wordLetters, 100, 100);
-            rightPoints += 1;
-            gameLoop();
-        }
+        // todo: find if there is a way to find where in the string the character is at so we can add it to the screen in the right spot.
+        // todo: install the theme, better / enhanced comments, power mode II, and rainbow brackets on laptop at home as well as figure out gitkraken (if you are reading this you probably have)
+        // ! the correct letters are not added in the correct spot as of right now!
+
+
         if (gameWord.contains(currentChar)){
             wordLetters = new GLabel(currentChar);
             add(wordLetters, 100, 100);
