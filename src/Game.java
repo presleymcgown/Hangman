@@ -22,6 +22,8 @@ public class Game extends GraphicsProgram {
     private String currentChar;
     private int rightPoints;
     private int wrongPoints;
+    private int sreakCounter;
+    private GLabel gameStreak;
 
     private String[] alphabet = {"A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"};
     public String[] wordBank = {"hello", "earth", "jazzy", "fizzy", "icing", "apple", "award",
