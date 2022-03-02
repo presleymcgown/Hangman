@@ -14,7 +14,7 @@ public class Head extends GOval {
 
         setFilled(false);
 
-        this.setColor(new Color(1, 1, 1, 55));
+        this.setColor(new Color(1, 1, 1, 35));
         this.screen = screen;
         this.color = color;
 
