@@ -26,11 +26,11 @@ public class Game extends GraphicsProgram {
     private GLabel gameStreak;
 
     private String[] alphabet = {"A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"};
-    public String[] wordBank = {"hello", "earth", "jazzy", "fizzy", "icing", "apple", "award",
-                                "tides", "actor", "baked", "beefy", "carol", "cater", "cello",
-                                "daily", "death", "dealt", "euros", "evict", "event", "feast",
-                                "fever", "grime", "gifts", "swift", "album", "karma", "style",
-                                "blank", "tours", "loves", "crush", "banks", "vroom", "clean"};
+    public String[] wordBank = {"blood", "blank", "blame", "crime", "cruel", "debut", "dress",
+                                "drops", "exile", "happy", "heart", "lakes", "lover", "peace",
+                                "ready", "seven", "smile", "speak", "state", "story", "short",
+                                "fever", "woman", "woods", "swift", "album", "karma", "style",
+                                "world", "tours", "lover", "paper", "today", "rings", "clean"};
 
 
 
