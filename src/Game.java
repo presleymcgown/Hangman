@@ -22,7 +22,7 @@ public class Game extends GraphicsProgram {
     private String currentChar;
     private int rightPoints;
     private int wrongPoints;
-    private int sreakCounter;
+    private int streakCounter = 0;
     private GLabel gameStreak;
 
     private String[] alphabet = {"A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"};
@@ -45,6 +45,7 @@ public class Game extends GraphicsProgram {
                 lettersOnScreen = new GLabel(alphabet[alphaNum] + "");
 
                 lettersOnScreen.setFont("Centaur-22");
+                lettersOnScreen.setColor(new Color(1, 1, 1, 140));
 
                 add(lettersOnScreen, 190 + (col * 30), 400 + (row * 30));
 
@@ -77,6 +78,9 @@ public class Game extends GraphicsProgram {
         RLeg = new Leg(375, 175, 350, 200);
         add(RLeg);
 
+        gameStreak = new GLabel("your streak: " + streakCounter);
+        add(gameStreak, 10, 475);
+
 
         gameWord = wordBank[RandomGenerator.getInstance().nextInt(1, 35)];
 
@@ -90,20 +94,70 @@ public class Game extends GraphicsProgram {
     private void gameLoop(){
         currentChar = Dialog.getString("please type in letter guess.");
 
-        // ? find out how to use gameWord.charAt for the placement of the correct letters
-        // todo: install the theme, better / enhanced comments, power mode II, and rainbow brackets on laptop at home as well as figure out gitkraken (if you are reading this you probably have)
-        // ! the correct letters are not added in the correct spot as of right now!
-
-
         if (gameWord.contains(currentChar)){
-            wordLetters = new GLabel(currentChar);
-            add(wordLetters, 100, 100);
-            rightPoints += 1;
-            gameLoop();
 
+            char checker0 = gameWord.charAt(0);
+            char checker1 = gameWord.charAt(1);
+            char checker2 = gameWord.charAt(2);
+            char checker3 = gameWord.charAt(3);
+            char checker4 = gameWord.charAt(4);
+
+            String firstChecker = "" + checker0;
+            String secChecker = "" + checker1;
+            String thirdChecker = "" + checker2;
+            String fourthChecker = "" + checker3;
+            String fifthChecker = "" + checker4;
+
+
+            if(currentChar.contains(firstChecker)){
+
+                wordLetters = new GLabel(currentChar);
+                add(wordLetters, 245, 295);
+                rightPoints += 1;
+            }
+            if(currentChar.contains(secChecker)){
+                wordLetters = new GLabel(currentChar);
+                add(wordLetters, 305, 295);
+                rightPoints += 1;
+            }
+            if(currentChar.contains(thirdChecker)){
+                wordLetters = new GLabel(currentChar);
+                add(wordLetters, 375, 295);
+                rightPoints += 1;
+            }
+            if(currentChar.contains(fourthChecker)){
+                wordLetters = new GLabel(currentChar);
+                add(wordLetters, 430, 295);
+                rightPoints += 1;
+            }
+            if(currentChar.contains(fifthChecker)){
+                wordLetters = new GLabel(currentChar);
+                add(wordLetters, 490, 295);
+                rightPoints += 1;
+            }
+
+            if(rightPoints == 5){
+                Dialog.showMessage("you won the game! play again.");
+                streakCounter += 1;
+                resetLoop();
+            }
+
+            gameLoop();
 
         }else{
             wrongPoints += 1;
+
+            // * this is where the letter that gets typed in gets removed (opacity lowered) if it isn't in the word
+            // ! THIS NEEDS TO BE BUG CHECKED AND COMPLETED, IT DOESN'T WORK!
+            if(alphabet[1].contains(currentChar)){
+               lettersOnScreen = new GLabel("A");
+               add(lettersOnScreen, (190 + 30), (400 + 30));
+
+               lettersOnScreen.setFont("Centaur-22");
+               lettersOnScreen.setColor(new Color(175, 71, 45, 227));
+
+            }
+
             if(wrongPoints == 1){
                 head.setColor(new Color(0, 0, 0, 210));
                 gameLoop();
@@ -122,9 +176,11 @@ public class Game extends GraphicsProgram {
             }else if(wrongPoints == 6){
                 RLeg.setColor(new Color(0, 0, 0, 210));
                 pause(50);
-                Dialog.showMessage("you lost! try again with a new word.");
+                Dialog.showMessage("you lost! the word was " + gameWord + ". try again with a new word.");
+                streakCounter = 0;
                 resetLoop();
             }
+
         }
 
 
