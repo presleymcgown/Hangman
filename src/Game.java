@@ -1,4 +1,5 @@
 import acm.graphics.GLabel;
+import acm.graphics.GRect;
 import acm.program.GraphicsProgram;
 import acm.util.RandomGenerator;
 import svu.csc213.Dialog;
@@ -25,7 +26,7 @@ public class Game extends GraphicsProgram {
     private int streakCounter = 0;
     private GLabel gameStreak;
 
-    private String[] alphabet = {"A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"};
+    private String[] alphabet = {"a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"};
     public String[] wordBank = {"blood", "blank", "blame", "crime", "cruel", "debut", "dress",
                                 "drops", "exile", "happy", "heart", "lakes", "lover", "peace",
                                 "ready", "seven", "smile", "speak", "state", "story", "short",
@@ -148,13 +149,214 @@ public class Game extends GraphicsProgram {
             wrongPoints += 1;
 
             // * this is where the letter that gets typed in gets removed (opacity lowered) if it isn't in the word
-            // ! THIS NEEDS TO BE BUG CHECKED AND COMPLETED, IT DOESN'T WORK!
-            if(alphabet[1].contains(currentChar)){
-               lettersOnScreen = new GLabel("A");
-               add(lettersOnScreen, (190 + 30), (400 + 30));
+            if(alphabet[0].contains(currentChar)){
+
+               lettersOnScreen = new GLabel("a");
+               add(lettersOnScreen, 190 + (0 * 30), 400 + (0 * 30));
 
                lettersOnScreen.setFont("Centaur-22");
-               lettersOnScreen.setColor(new Color(175, 71, 45, 227));
+               lettersOnScreen.sendToFront();
+               lettersOnScreen.setColor(new Color(175, 71, 45, 255));
+
+            }else if(alphabet[1].contains(currentChar)){
+                lettersOnScreen = new GLabel("b");
+                add(lettersOnScreen, 190 + (1 * 30), 400 + (0 * 30));
+
+                lettersOnScreen.setFont("Centaur-22");
+                lettersOnScreen.sendToFront();
+                lettersOnScreen.setColor(new Color(175, 71, 45, 255));
+
+            }else if(alphabet[2].contains(currentChar)){
+                lettersOnScreen = new GLabel("c");
+                add(lettersOnScreen, 190 + (2 * 30), 400 + (0 * 30));
+
+                lettersOnScreen.setFont("Centaur-22-bold");
+                lettersOnScreen.sendToFront();
+                lettersOnScreen.setColor(new Color(175, 71, 45, 255));
+
+            }else if(alphabet[3].contains(currentChar)){
+                lettersOnScreen = new GLabel("d");
+                add(lettersOnScreen, 190 + (3 * 30), 400 + (0 * 30));
+
+                lettersOnScreen.setFont("Centaur-22-bold");
+                lettersOnScreen.sendToFront();
+                lettersOnScreen.setColor(new Color(175, 71, 45, 255));
+
+            }else if(alphabet[4].contains(currentChar)){
+                lettersOnScreen = new GLabel("e");
+                add(lettersOnScreen, 190 + (4 * 30), 400 + (0 * 30));
+
+                lettersOnScreen.setFont("Centaur-22-bold");
+                lettersOnScreen.sendToFront();
+                lettersOnScreen.setColor(new Color(175, 71, 45, 255));
+
+            }else if(alphabet[5].contains(currentChar)){
+                lettersOnScreen = new GLabel("f");
+                add(lettersOnScreen, 190 + (5 * 30), 400 + (0 * 30));
+
+                lettersOnScreen.setFont("Centaur-22-bold");
+                lettersOnScreen.sendToFront();
+                lettersOnScreen.setColor(new Color(175, 71, 45, 255));
+
+            }else if(alphabet[6].contains(currentChar)){
+                lettersOnScreen = new GLabel("g");
+                add(lettersOnScreen, 190 + (6 * 30), 400 + (0 * 30));
+
+                lettersOnScreen.setFont("Centaur-22-bold");
+                lettersOnScreen.sendToFront();
+                lettersOnScreen.setColor(new Color(175, 71, 45, 255));
+
+            }else if(alphabet[7].contains(currentChar)){
+                lettersOnScreen = new GLabel("h");
+                add(lettersOnScreen, 190 + (7 * 30), 400 + (0 * 30));
+
+                lettersOnScreen.setFont("Centaur-22-bold");
+                lettersOnScreen.sendToFront();
+                lettersOnScreen.setColor(new Color(175, 71, 45, 255));
+
+            }else if(alphabet[8].contains(currentChar)){
+                lettersOnScreen = new GLabel("i");
+                add(lettersOnScreen, 190 + (8 * 30), 400 + (0 * 30));
+
+                lettersOnScreen.setFont("Centaur-22-bold");
+                lettersOnScreen.sendToFront();
+                lettersOnScreen.setColor(new Color(175, 71, 45, 255));
+
+            }else if(alphabet[9].contains(currentChar)){
+                lettersOnScreen = new GLabel("j");
+                add(lettersOnScreen, 190 + (9 * 30), 400 + (0 * 30));
+
+                lettersOnScreen.setFont("Centaur-22-bold");
+                lettersOnScreen.sendToFront();
+                lettersOnScreen.setColor(new Color(175, 71, 45, 255));
+
+            }else if(alphabet[10].contains(currentChar)){
+                lettersOnScreen = new GLabel("k");
+                add(lettersOnScreen, 190 + (10 * 30), 400 + (0 * 30));
+
+                lettersOnScreen.setFont("Centaur-22-bold");
+                lettersOnScreen.sendToFront();
+                lettersOnScreen.setColor(new Color(175, 71, 45, 255));
+
+            }else if(alphabet[11].contains(currentChar)){
+                lettersOnScreen = new GLabel("l");
+                add(lettersOnScreen, 190 + (11 * 30), 400 + (0 * 30));
+
+                lettersOnScreen.setFont("Centaur-22-bold");
+                lettersOnScreen.sendToFront();
+                lettersOnScreen.setColor(new Color(175, 71, 45, 255));
+
+            }else if(alphabet[12].contains(currentChar)){
+                lettersOnScreen = new GLabel("m");
+                add(lettersOnScreen, 190 + (12 * 30), 400 + (0 * 30));
+
+                lettersOnScreen.setFont("Centaur-22-bold");
+                lettersOnScreen.sendToFront();
+                lettersOnScreen.setColor(new Color(175, 71, 45, 255));
+
+            }else if(alphabet[13].contains(currentChar)){
+                lettersOnScreen = new GLabel("n");
+                add(lettersOnScreen, 190 + (0 * 30), 400 + (1 * 30));
+
+                lettersOnScreen.setFont("Centaur-22-bold");
+                lettersOnScreen.sendToFront();
+                lettersOnScreen.setColor(new Color(175, 71, 45, 255));
+
+            }else if(alphabet[14].contains(currentChar)){
+                lettersOnScreen = new GLabel("o");
+                add(lettersOnScreen, 190 + (1 * 30), 400 + (1 * 30));
+
+                lettersOnScreen.setFont("Centaur-22-bold");
+                lettersOnScreen.sendToFront();
+                lettersOnScreen.setColor(new Color(175, 71, 45, 255));
+
+            }else if(alphabet[15].contains(currentChar)){
+                lettersOnScreen = new GLabel("p");
+                add(lettersOnScreen, 190 + (2 * 30), 400 + (1 * 30));
+
+                lettersOnScreen.setFont("Centaur-22-bold");
+                lettersOnScreen.sendToFront();
+                lettersOnScreen.setColor(new Color(175, 71, 45, 255));
+
+            }else if(alphabet[16].contains(currentChar)){
+                lettersOnScreen = new GLabel("q");
+                add(lettersOnScreen, 190 + (3 * 30), 400 + (1 * 30));
+
+                lettersOnScreen.setFont("Centaur-22-bold");
+                lettersOnScreen.sendToFront();
+                lettersOnScreen.setColor(new Color(175, 71, 45, 255));
+
+            }else if(alphabet[17].contains(currentChar)){
+                lettersOnScreen = new GLabel("r");
+                add(lettersOnScreen, 190 + (4 * 30), 400 + (1 * 30));
+
+                lettersOnScreen.setFont("Centaur-22-bold");
+                lettersOnScreen.sendToFront();
+                lettersOnScreen.setColor(new Color(175, 71, 45, 255));
+
+            }else if(alphabet[18].contains(currentChar)){
+                lettersOnScreen = new GLabel("s");
+                add(lettersOnScreen, 190 + (5 * 30), 400 + (1 * 30));
+
+                lettersOnScreen.setFont("Centaur-22-bold");
+                lettersOnScreen.sendToFront();
+                lettersOnScreen.setColor(new Color(175, 71, 45, 255));
+
+            }else if(alphabet[19].contains(currentChar)){
+                lettersOnScreen = new GLabel("t");
+                add(lettersOnScreen, 190 + (6 * 30), 400 + (1 * 30));
+
+                lettersOnScreen.setFont("Centaur-22-bold");
+                lettersOnScreen.sendToFront();
+                lettersOnScreen.setColor(new Color(175, 71, 45, 255));
+
+            }else if(alphabet[20].contains(currentChar)){
+                lettersOnScreen = new GLabel("u");
+                add(lettersOnScreen, 190 + (7 * 30), 400 + (1 * 30));
+
+                lettersOnScreen.setFont("Centaur-22-bold");
+                lettersOnScreen.sendToFront();
+                lettersOnScreen.setColor(new Color(175, 71, 45, 255));
+
+            }else if(alphabet[21].contains(currentChar)){
+                lettersOnScreen = new GLabel("v");
+                add(lettersOnScreen, 190 + (8 * 30), 400 + (1 * 30));
+
+                lettersOnScreen.setFont("Centaur-22-bold");
+                lettersOnScreen.sendToFront();
+                lettersOnScreen.setColor(new Color(175, 71, 45, 255));
+
+            }else if(alphabet[22].contains(currentChar)){
+                lettersOnScreen = new GLabel("w");
+                add(lettersOnScreen, 190 + (9 * 30), 400 + (1 * 30));
+
+                lettersOnScreen.setFont("Centaur-22-bold");
+                lettersOnScreen.sendToFront();
+                lettersOnScreen.setColor(new Color(175, 71, 45, 255));
+
+            }else if(alphabet[23].contains(currentChar)){
+                lettersOnScreen = new GLabel("x");
+                add(lettersOnScreen, 190 + (10 * 30), 400 + (1 * 30));
+
+                lettersOnScreen.setFont("Centaur-22-bold");
+                lettersOnScreen.sendToFront();
+                lettersOnScreen.setColor(new Color(175, 71, 45, 255));
+
+            }else if(alphabet[24].contains(currentChar)){
+                lettersOnScreen = new GLabel("y");
+                add(lettersOnScreen, 190 + (11 * 30), 400 + (1 * 30));
+
+                lettersOnScreen.setFont("Centaur-22-bold");
+                lettersOnScreen.sendToFront();
+                lettersOnScreen.setColor(new Color(175, 71, 45, 255));
+
+            }else if(alphabet[25].contains(currentChar)){
+                lettersOnScreen = new GLabel("z");
+                add(lettersOnScreen, 190 + (12 * 30), 400 + (1 * 30));
+
+                lettersOnScreen.setFont("Centaur-22-bold");
+                lettersOnScreen.sendToFront();
+                lettersOnScreen.setColor(new Color(175, 71, 45, 255));
 
             }
 
